@@ -90,10 +90,10 @@ if (expandButtons.length > 0) {
 
       if (expandedContent.style.display === "none") {
         expandedContent.style.display = "block";
-        this.textContent = "Ler menos";
+        this.textContent = "Minimizar";
       } else {
         expandedContent.style.display = "none";
-        this.textContent = "Ler mais";
+        this.textContent = "Saiba mais";
       }
     });
   });
