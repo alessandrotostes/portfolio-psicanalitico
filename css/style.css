@@ -823,3 +823,45 @@ a:hover {
     font-size: 28px;
   }
 }
+
+/* Estilos para o texto expansível */
+.expandable-text {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.text-preview {
+  margin-bottom: 10px;
+}
+
+.btn-expand-text {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-expand-text:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+}
+
+.text-expanded {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
