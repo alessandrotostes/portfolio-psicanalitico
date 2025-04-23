@@ -33,7 +33,7 @@ h6 {
 }
 
 a {
-  color: #f8f9fa;
+  color: #666666;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -576,8 +576,16 @@ a:hover {
 #footer {
   background: var(--color-footer);
   padding: 0 0 30px 0;
-  color: var(--color-white);
+  color: #ffffff;
   font-size: 14px;
+}
+
+#footer a {
+  color: white;
+}
+
+#footer a:hover {
+  color: var(--color-accent);
 }
 
 #footer .footer-top {
