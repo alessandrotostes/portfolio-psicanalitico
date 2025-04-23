@@ -33,7 +33,7 @@ h6 {
 }
 
 a {
-  color: var(--color-primary);
+  color: #f8f9fa;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -406,7 +406,7 @@ a:hover {
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-light);
 }
 
