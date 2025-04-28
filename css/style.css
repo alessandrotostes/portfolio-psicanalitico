@@ -85,7 +85,7 @@ a:hover {
 }
 
 .section-title p {
-  margin-bottom: 0;
+  margin-bottom: 15px;
   color: var(--color-text-light);
 }
 
