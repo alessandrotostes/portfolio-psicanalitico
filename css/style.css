@@ -111,7 +111,6 @@ a:hover {
 .logo {
   width: 85px; /* Ajuste o tamanho da logo */
   height: auto;
-  margin-right: 10px; /* Distância entre a logo e o nome */
   vertical-align: middle; /* Alinha a logo com o texto */
 }
 
@@ -366,13 +365,14 @@ a:hover {
   width: 100%;
   height: 40vh;
   background-color: var(--color-light-bg);
-  padding-top: 120px;
+  padding-top: 100px;
 }
 
 #contact-header h1 {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
+  padding-top: 5vh;
   color: var(--color-primary-dark);
 }
 
