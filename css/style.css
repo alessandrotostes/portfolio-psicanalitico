@@ -107,6 +107,13 @@ a:hover {
 .navbar .nav-link.active {
   font-weight: 600;
 }
+/* Estilo da logo */
+.logo {
+  width: 85px; /* Ajuste o tamanho da logo */
+  height: auto;
+  margin-right: 10px; /* Distância entre a logo e o nome */
+  vertical-align: middle; /* Alinha a logo com o texto */
+}
 
 /* Hero Section */
 #hero {
@@ -270,7 +277,7 @@ a:hover {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.07);
   position: relative;
   border-radius: 10px;
-  height: 100%;
+  height: 70%;
 }
 
 .testimonial-item p {
@@ -420,8 +427,8 @@ a:hover {
 
 .maps iframe {
   width: 100%;
-  height: 350px;
-  border-radius: 10px;
+  height: 370px;
+  border-radius: 30px;
 }
 
 .contact .map-placeholder {
@@ -488,17 +495,17 @@ a:hover {
 }
 
 .social-links a {
-  font-size: 18px;
+  font-size: 40px;
   display: inline-block;
   background: var(--color-light-bg);
   color: var(--color-primary);
   line-height: 1;
-  padding: 12px 0;
+  padding: 10px 0;
   margin-right: 8px;
   border-radius: 50%;
   text-align: center;
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   transition: 0.3s;
 }
 
