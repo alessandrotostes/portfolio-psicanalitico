@@ -47,7 +47,6 @@ a:hover {
 .section-bg {
   background-color: var(--color-light-bg);
 }
-
 .section-title {
   text-align: center;
 }
@@ -884,4 +883,11 @@ a:hover {
   to {
     opacity: 1;
   }
+}
+
+/* Estilos para padronizar tamanho das imagens do carrossel */
+#heroCarousel .carousel-item img {
+  height: 60vh; /* Ajuste de altura conforme necessário */
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+  width: 100%;
 }
