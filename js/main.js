@@ -1,11 +1,71 @@
-// JavaScript personalizado para o site de portfólio do psicanalista
-
 document.addEventListener("DOMContentLoaded", function () {
   // Inicializa a biblioteca de animação AOS
   AOS.init({
     duration: 800, // Duração da animação em milissegundos
     once: true, // A animação acontece apenas uma vez
   });
+  // Bloco Swiper
+  const swiper = new Swiper(".swiper", {
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  // --- INÍCIO DO CÓDIGO SCROLLSPY CORRIGIDO ---
+
+  function updateActiveLinkOnScroll() {
+    const navbarHeight = 100; // Offset para o menu
+    let currentSectionId = "";
+
+    // Encontra a seção que está atualmente na tela
+    document.querySelectorAll("section[id]").forEach((section) => {
+      if (window.scrollY >= section.offsetTop - navbarHeight) {
+        currentSectionId = section.getAttribute("id");
+      }
+    });
+
+    // Ativa o link correspondente
+    document.querySelectorAll(".navbar-nav a").forEach((link) => {
+      link.classList.remove("active");
+      // O href do link deve conter o ID da seção atual
+      if (link.getAttribute("href").includes(currentSectionId)) {
+        // Checagem para não ativar o "Início" (index.html) quando em outra seção
+        if (currentSectionId) {
+          link.classList.add("active");
+        }
+      }
+    });
+
+    // Lógica para garantir que o "Início" fique ativo no topo
+    const homeLink = document.querySelector('.navbar-nav a[href="index.html"]');
+    if (window.scrollY < 500) {
+      // Se estiver perto do topo
+      document
+        .querySelectorAll(".navbar-nav a")
+        .forEach((link) => link.classList.remove("active"));
+      if (homeLink) homeLink.classList.add("active");
+    }
+  }
+
+  window.addEventListener("scroll", updateActiveLinkOnScroll);
+  window.addEventListener("load", updateActiveLinkOnScroll);
+
+  // --- FIM DO CÓDIGO SCROLLSPY CORRIGIDO ---
+
   // Ativar botão de voltar ao topo
   const backToTopButton = document.querySelector(".back-to-top");
 
@@ -61,45 +121,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Simulação de envio do formulário de contato
-  const contactForm = document.querySelector(".php-email-form");
+  // Funcionalidade para expandir/recolher texto
+  const expandButtons = document.querySelectorAll(".btn-expand-text");
 
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+  if (expandButtons.length > 0) {
+    expandButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const expandableText = this.closest(".expandable-text");
+        const expandedContent = expandableText.querySelector(".text-expanded");
 
-      // Ocultar mensagens anteriores
-      this.querySelector(".loading").style.display = "block";
-      this.querySelector(".error-message").style.display = "none";
-      this.querySelector(".sent-message").style.display = "none";
-
-      // Simulação de envio (em um site real, aqui seria feita uma requisição AJAX)
-      setTimeout(() => {
-        this.querySelector(".loading").style.display = "none";
-        this.querySelector(".sent-message").style.display = "block";
-
-        // Limpar campos do formulário
-        this.reset();
-      }, 1500);
+        if (expandedContent.style.display === "none") {
+          expandedContent.style.display = "block";
+          this.textContent = "Minimizar";
+        } else {
+          expandedContent.style.display = "none";
+          this.textContent = "Saiba mais";
+        }
+      });
     });
   }
-});
-// Funcionalidade para expandir/recolher texto
-const expandButtons = document.querySelectorAll(".btn-expand-text");
-
-if (expandButtons.length > 0) {
-  expandButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const expandableText = this.closest(".expandable-text");
-      const expandedContent = expandableText.querySelector(".text-expanded");
-
-      if (expandedContent.style.display === "none") {
-        expandedContent.style.display = "block";
-        this.textContent = "Minimizar";
-      } else {
-        expandedContent.style.display = "none";
-        this.textContent = "Saiba mais";
-      }
-    });
-  });
-}
+}); // <-- FECHAMENTO DO DOMContentLoaded

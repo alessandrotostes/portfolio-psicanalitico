@@ -9,14 +9,14 @@
   --color-text: #333333; /* Texto escuro */
   --color-text-light: #666666; /* Texto cinza */
   --color-white: #ffffff; /* Branco */
-  --color-light-bg: #f5f7f5; /* Fundo claro com tom verde */
+  --color-light-bg: #eff5ef; /* Fundo claro com tom verde */
   --color-accent: #a0c1a2; /* Verde pastel para acentos */
   --color-footer: #2d3e2e; /* Verde escuro para rodapé */
 }
 
 /* Estilos Gerais */
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: var(--color-text);
   background-color: var(--color-white);
   line-height: 1.8;
@@ -28,7 +28,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
   color: var(--color-text-light);
 }
@@ -91,8 +91,8 @@ a:hover {
 /* Navbar */
 .navbar {
   padding: 10px 0;
-  background-color: var(--color-white);
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-light-bg);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.5s;
 }
 
@@ -104,42 +104,40 @@ a:hover {
 
 .navbar .nav-link {
   font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
   color: var(--color-text) !important;
   padding: 10px 15px !important;
   margin: 0 5px;
-  position: relative; /* Essencial para o posicionamento do sublinhado */
-  transition: color 0.3s ease; /* Transição suave da cor do texto */
+  position: relative; /* Essencial para o sublinhado funcionar */
+  transition: color 0.3s ease;
 }
 
 .navbar .nav-link::after {
   content: "";
   position: absolute;
   width: 100%;
-  transform: scaleX(0); /* Começa com largura 0 */
+  transform: scaleX(0); /* Começa com largura 0 (invisível) */
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--color-primary); /* Cor do sublinhado */
-  transform-origin: center; /* A animação acontece do centro para as bordas */
-  transition: transform 0.3s ease-out; /* Velocidade e tipo da animação */
+  background-color: var(--color-primary);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
 }
 .navbar .nav-link:hover {
-  color: var(
-    --color-primary
-  ) !important; /* Mantém a mudança de cor ao passar o mouse */
+  color: var(--color-primary) !important; /* Muda a cor do texto */
 }
 .navbar .nav-link:hover::after {
-  transform: scaleX(1); /* Expande o sublinhado para 100% da largura */
+  transform: scaleX(1); /* Mostra o sublinhado */
 }
 
 .navbar .nav-link.active {
-  color: var(--color-primary) !important;
-  font-weight: 600;
+  color: var(--color-primary) !important; /* Garante a cor de destaque */
+  font-weight: 600; /* Deixa a fonte um pouco mais forte */
 }
 .navbar .nav-link.active::after {
-  transform: scaleX(1);
+  transform: scaleX(1); /* Mostra o sublinhado */
 }
 
 .navbar .nav-link.active {
@@ -158,6 +156,12 @@ a:hover {
     10px
   ); /* Para compatibilidade com o navegador Safari */
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+}
+.contact-page .navbar {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.08);
 }
 /* Estilo da logo */
 .logo {
@@ -250,17 +254,72 @@ a:hover {
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+.hero-img .swiper {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-img .swiper-slide img {
+  width: 100%;
+  height: 60vh; /* Altura similar à que você já usava */
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+/* Estilizando as bolinhas de paginação para combinar com sua paleta */
+.swiper-pagination-bullet {
+  background-color: var(--color-primary-light) !important;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-primary-dark) !important;
+  opacity: 1;
+}
+
+/* Estilizando as setas de navegação */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary-dark) !important;
+  transition: 0.3s;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Fundo branco semitransparente */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  backdrop-filter: blur(5px); /* Efeito de vidro para as setas */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--color-primary) !important;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
 
 /* Sobre Section */
 .sobre {
   padding: 80px 0;
+  /* ADICIONADO: Fundo parallax (copiado da seção CTA) */
+  background: linear-gradient(rgba(78, 122, 81, 0.9), rgba(60, 94, 62, 0.9)),
+    url("../img/cta-bg.jpg") fixed center center;
+  background-size: cover;
 }
 
-.sobre .content h3 {
-  font-weight: 700;
-  font-size: 26px;
-  color: var(--color-primary);
-  margin-bottom: 20px;
+.sobre .section-title h2,
+.sobre .content h3,
+.sobre .content h4,
+.sobre .content ul {
+  color: var(--color-white); /* Deixa os títulos e a lista brancos */
 }
 
 .sobre .content ul {
@@ -275,17 +334,18 @@ a:hover {
 }
 
 .sobre .content ul li::before {
-  content: "\f00c";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  left: 0;
-  top: 2px;
-  color: var(--color-primary);
+  color: var(--color-white);
 }
 
-.sobre .content p:last-child {
-  margin-bottom: 0;
+.sobre .content p,
+.sobre .content .fst-italic,
+.sobre .content h7 {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Deixa os parágrafos brancos com leve transparência */
 }
 
 .sobre img {
@@ -454,7 +514,7 @@ a:hover {
 /* Contact Page */
 #contact-header {
   width: 100%;
-  height: 40vh;
+  height: 27vh;
   background-color: var(--color-light-bg);
   padding-top: 100px;
 }
@@ -463,7 +523,7 @@ a:hover {
   margin: 0;
   font-size: 48px;
   font-weight: 700;
-  padding-top: 7vh;
+  padding-top: 3vh;
   color: var(--color-primary-dark);
 }
 
@@ -578,7 +638,11 @@ a:hover {
 
 /* Social Media Section */
 .social-media {
+  background-color: #3c5e3ee0;
   padding: 10px 0;
+}
+.social-media h3 {
+  color: var(--color-white);
 }
 
 .social-links {
@@ -951,7 +1015,7 @@ a:hover {
 
 .text-expanded {
   margin-top: 15px;
-  padding-top: 15px;
+  padding-top: 20px;
   border-top: 1px solid #eee;
   animation: fadeIn 0.5s ease;
 }
@@ -964,10 +1028,54 @@ a:hover {
     opacity: 1;
   }
 }
+/* =================================== */
+/* Estilização da Citação (Blockquote) */
+/* =================================== */
 
-/* Estilos para padronizar tamanho das imagens do carrossel */
-#heroCarousel .carousel-item img {
-  height: 60vh; /* Ajuste de altura conforme necessário */
-  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
-  width: 100%;
+/* 1. O container principal da citação */
+.styled-quote {
+  position: relative; /* Necessário para posicionar o ícone de aspas */
+  padding: 1.5em 2em;
+  max-width: 700px; /* Limita a largura para melhor leitura em telas grandes */
+  margin: 40px auto; /* Centraliza e adiciona espaço vertical */
+  font-size: 1.2em; /* Aumenta um pouco o tamanho da fonte */
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-text-light);
+  border-left: 5px solid var(--color-accent); /* Barra lateral de destaque */
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* 2. O ícone de aspas gigante no fundo */
+.styled-quote::before {
+  content: "∞"; /* Código unicode para aspas abertas “ */
+  font-family: "Georgia", serif; /* Uma fonte com aspas bonitas */
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 5em; /* Tamanho gigante */
+  color: var(--color-accent);
+  opacity: 0.15;
+  z-index: 1; /* Coloca as aspas atrás do texto */
+}
+
+/* 3. Garante que o texto fique na frente das aspas */
+.styled-quote p,
+.styled-quote cite {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+/* 4. Estilo para o autor da citação */
+.styled-quote cite {
+  display: block; /* Faz ocupar uma linha inteira */
+  margin-top: 1em;
+  text-align: right; /* Alinha à direita */
+  font-style: normal; /* Remove o itálico do autor */
+  font-weight: 600;
+  font-size: 0.9em; /* Tamanho um pouco menor que o texto principal */
+  color: var(--color-primary-dark);
 }

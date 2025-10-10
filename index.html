@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WF3KZWVB");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JBBDBWS5TJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-JBBDBWS5TJ");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -20,10 +47,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Raleway:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css?v=1.0" />
     <link rel="icon" href="img/tp-favico.ico" type="image/x-icon" />
   </head>
   <body>
@@ -48,7 +79,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">Início</a>
+                <a class="nav-link" href="index.html">Início</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#sobre">Sobre</a>
@@ -75,86 +106,44 @@
               e bem-estar emocional.
             </h2>
             <div class="d-flex justify-content-center justify-content-lg-start">
-              <a href="contact.html" class="btn-get-started"
+              <a
+                href="https://wa.me/5516996300387"
+                class="btn-get-started"
+                target="_blank"
+                rel="noopener noreferrer"
                 >Agende uma Consulta</a
               >
             </div>
           </div>
           <div class="col-lg-6 hero-img">
-            <div
-              id="heroCarousel"
-              class="carousel slide"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#heroCarousel"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#heroCarousel"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#heroCarousel"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
                   <img
                     src="img/hero-img.jpg"
-                    class="d-block w-100 img-fluid"
+                    class="img-fluid"
                     alt="Cartão Tauana Pavanelli"
                   />
                 </div>
-                <div class="carousel-item">
+                <div class="swiper-slide">
                   <img
                     src="img/hero-img1.jpg"
-                    class="d-block w-100 img-fluid"
+                    class="img-fluid"
                     alt="Imagem Consultorio 1"
                   />
                 </div>
-                <div class="carousel-item">
+                <div class="swiper-slide">
                   <img
                     src="img/hero-img2.jpg"
-                    class="d-block w-100 img-fluid"
+                    class="img-fluid"
                     alt="Imagem Consultorio 2"
                   />
                 </div>
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#heroCarousel"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Anterior</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#heroCarousel"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Próximo</span>
-              </button>
+              <div class="swiper-pagination"></div>
+
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
           </div>
         </div>
@@ -170,7 +159,7 @@
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
             <img
-              src="img/profile.jpg"
+              src="img/profile1.png"
               class="img-fluid rounded"
               alt="Foto do Psicanalista"
             />
@@ -180,7 +169,6 @@
             data-aos="fade-left"
             data-aos-delay="200"
           >
-            <h3>Psicanalista</h3>
             <p class="fst-italic"></p>
             <div class="row">
               <div class="col-lg-6">
@@ -190,12 +178,12 @@
                     Formação em Psicanálise Clínica, com especialização em
                     Psicanálise Lacaniana
                   </li>
-                  <li>Graduação em Pedagogia</li>
                   <li>
                     Mestrado em Saúde Pública – Faculdade de Medicina de
                     Ribeirão Preto, Universidade de São Paulo (FMRP-USP)
                   </li>
                   <li>Graduação em Fisioterapia - UNAERP</li>
+                  <li>Graduação em Pedagogia - Claretiano</li>
                 </ul>
               </div>
               <div class="col-lg-6">
@@ -203,18 +191,18 @@
                 <ul>
                   <li>
                     Psicanalista clínica com 4 anos de experiência no
-                    atendimento de crianças, adolescentes e adultos.
+                    atendimento de adolescentes e adultos.
                   </li>
                   <li>
-                    Professora em cursos de formação em psicanálise nos
-                    institutos O’Semblante e Távola, onde também sou analista
-                    credenciada para análise de alunos em formação.
+                    Professora em cursos de formação em psicanálise no instituto
+                    O’Semblante, onde também sou analista credenciada para
+                    análise de alunos em formação.
                   </li>
                   <li>Supervisão clinica individual ou em grupo.</li>
                   <li>
                     Experiência internacional como professora no curso de
-                    graduação em Psicologia na University of
-                    Nebraska-Lincoln(EUA).
+                    graduação em Psicologia na University of Nebraska-Lincoln
+                    (EUA).
                   </li>
                 </ul>
               </div>
@@ -244,13 +232,14 @@
                   libertação que nos viabiliza sofrer por coisas diferentes.
                   Imagine que você mora numa mansão, imensa, cheia de cômodos,
                   mas nunca teve coragem de sair de dentro do banheiro. <br />
+
+                  A psicanálise é a ferramenta que vai lhe ajudar a abrir a
+                  porta e vislumbrar tantas possibilidades que existem. Minha
+                  abordagem terapêutica é individualizada, não seguimos um
+                  manual de instruções, cada sujeito é único em sua experiência
+                  e construiremos juntos essa jornada de autoconhecimento.
+                  <br />
                 </p>
-                A psicanálise é a ferramenta que vai lhe ajudar a abrir a porta
-                e vislumbrar tantas possibilidades que existem. Minha abordagem
-                terapêutica é individualizada, não seguimos um manual de
-                instruções, cada sujeito é único em sua experiência e
-                construiremos juntos essa jornada de autoconhecimento.
-                <br />
                 <p>
                   A busca é pela origem daquilo que lhe faz sofrer, aquilo que
                   se repete, aquilo que nem ao menos ainda é consciente. É um
@@ -260,22 +249,11 @@
                   possa escolher. <br />
                 </p>
                 <p>
-                  Na clínica infantil o brincar e os objetos transicionais são
-                  instrumentos fundamentais, uma vez que a psique da criança não
-                  possui vocabulário nem capacidade suficiente de simbolizar em
-                  palavras o que sentem. O lúdico nos permite interpretar
-                  ansiedades, desconfortos, medos e com embasamento teórico,
-                  auxiliar a criança a atravessar momentos difíceis ou muitas
-                  vezes traumáticos. Sempre em consonância com os
-                  pais/cuidadores, atender uma criança é também acolher seus
-                  pais.<br />
-                </p>
-                <p>
-                  Na clínica do adulto, minha experiência teórica em psicanálise
-                  lacaniana, traz a elaboração do imaginário e simbólico,
-                  auxiliando o paciente a dar o nome para seu sofrimento. Como
-                  adentrar nossas camadas mais profundas se não sabemos o
-                  porquê/pelo quê sofremos? <br />
+                  Minha experiência teórica em psicanálise lacaniana, traz a
+                  elaboração do imaginário e simbólico, auxiliando o paciente a
+                  dar o nome para seu sofrimento. Como adentrar nossas camadas
+                  mais profundas se não sabemos o porquê/pelo quê sofremos?
+                  <br />
                 </p>
                 <p>
                   Na clínica da pessoa com deficiência, atuo com a interface da
@@ -444,12 +422,12 @@
                 <h3>Tauana Pavanelli</h3>
                 <p>
                   <a
-                    href="https://maps.app.goo.gl/UY132Qy6CDecaRJK9"
+                    href="https://maps.app.goo.gl/u3ritaXARQv4kNkg9"
                     target="_blank"
-                    >Rua Professor Roberto Jose, 100 - Nova Aliança
+                    rel="noopener noreferrer"
+                    >Rua Marcos Markarian - Nova Aliança, 595
                     <br />
-                    Ribeirão Preto - SP, 14026-562<br />
-                    Prédio Uno Office<br />
+                    Ribeirão Preto - SP, 14026-583<br />
                   </a>
                   <br />
                   <strong>Email:</strong> tauanapavanelli@gmail.com<br />
@@ -483,7 +461,10 @@
               <h4>Horário de Atendimento</h4>
               <p>
                 Consulte a disponibilidade<br /><strong>Telefone:</strong>
-                <a href="https://wa.me/5516996300387" target="_blank"
+                <a
+                  href="https://wa.me/5516996300387"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >(16) 99630-0387</a
                 >
               </p>
@@ -497,8 +478,11 @@
           © Copyright <strong><span>Tauana Pavanelli</span></strong
           >. Todos os direitos reservados. <br />
           Desenvolvido por
-          <a href="https://tostesdev.com/" target="_blank" noopener noreferrer
-            ><strong>Alessandro Tostes</strong></a
+          <a
+            href="https://tostesdev.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><strong>tostesdev.com</strong></a
           >
         </div>
       </div>
@@ -509,9 +493,9 @@
       class="back-to-top d-flex align-items-center justify-content-center"
       ><i class="fas fa-arrow-up"></i
     ></a>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js?v=1.0"></script>
   </body>
 </html>

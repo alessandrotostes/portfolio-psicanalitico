@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Remove .html de arquivos
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
+
+# Redireciona /index.html para /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)/index\.html [NC]
+RewriteRule ^(.*)/index\.html$ /$1 [R=301,L]
