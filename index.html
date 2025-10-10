@@ -8,29 +8,30 @@
       content="Tauana Pavanelli, psicanalista focada em autoconhecimento, bem-estar emocional e atendimento personalizado."
     />
     <title>Tauana Pavanelli Psicanalista</title>
-    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Font Awesome para ícones -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <!-- CSS personalizado -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="img/tp-favico.ico" type="image/x-icon" />
   </head>
   <body>
-    <!-- Cabeçalho/Navbar -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <!-- Logo -->
             <img src="img/TAUANA PAVANELI.png" alt="Logo" class="logo" />
-            <!-- Nome -->
             <span class="brand-text">Tauana Pavanelli</span>
           </a>
           <button
@@ -64,7 +65,6 @@
       </nav>
     </header>
 
-    <!-- Seção Hero/Banner -->
     <section id="hero" class="d-flex align-items-center">
       <div class="container">
         <div class="row">
@@ -161,31 +161,31 @@
       </div>
     </section>
 
-    <!-- Seção Sobre -->
     <section id="sobre" class="sobre section-bg">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h2>Sobre Mim</h2>
         </div>
 
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
             <img
               src="img/profile.jpg"
               class="img-fluid rounded"
               alt="Foto do Psicanalista"
             />
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
+          <div
+            class="col-lg-8 pt-4 pt-lg-0 content"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <h3>Psicanalista</h3>
-            <p class="fst-italic">
-              <!-- Espaço para breve descrição profissional -->
-            </p>
+            <p class="fst-italic"></p>
             <div class="row">
               <div class="col-lg-6">
                 <h4>Formação Acadêmica</h4>
                 <ul>
-                  <!-- Espaço para formação acadêmica -->
                   <li>
                     Formação em Psicanálise Clínica, com especialização em
                     Psicanálise Lacaniana
@@ -201,7 +201,6 @@
               <div class="col-lg-6">
                 <h4>Experiência Profissional</h4>
                 <ul>
-                  <!-- Espaço para experiência profissional -->
                   <li>
                     Psicanalista clínica com 4 anos de experiência no
                     atendimento de crianças, adolescentes e adultos.
@@ -222,7 +221,6 @@
             </div>
             <div class="expandable-text">
               <p class="text-preview">
-                <!-- Início do texto resumido -->
                 <h7>
                   Abaixo você pode encontrar uma breve descrição da minha
                   visão<br />
@@ -230,12 +228,9 @@
                   <strong>psicanálise</strong>, e um pouco de como é feito meu
                   trabalho.</h7
                 >
-                <!-- Fim do texto resumido -->
               </p>
 
               <div class="text-expanded" style="display: none">
-                <!-- Texto expandido -->
-
                 <p>
                   A psicanálise cura? Essa é uma pergunta frequente na minha
                   prática clínica e minha resposta é: não. E por que a
@@ -300,21 +295,23 @@
       </div>
     </section>
 
-    <!-- Seção Serviços -->
     <section id="servicos" class="servicos">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h2>Serviços</h2>
           <p>Conheça alguma das áreas em que posso ajudar</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div
+            class="col-lg-4 col-md-6 d-flex align-items-stretch"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
             <div class="service-box">
               <div class="icon"><i class="fas fa-couch"></i></div>
               <h4>Terapia Presencial</h4>
               <p>
-                <!-- Espaço para descrição do serviço -->
                 A análise presencial acontece em um ambiente seguro e acolhedor,
                 onde o sigilo profissional é garantido, permitindo que você fale
                 livremente sobre angústias e medos. Através da relação com o
@@ -330,12 +327,13 @@
 
           <div
             class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
+            data-aos="zoom-in"
+            data-aos-delay="200"
           >
             <div class="service-box">
               <div class="icon"><i class="fas fa-desktop"></i></div>
               <h4>Terapia Online</h4>
               <p>
-                <!-- Espaço para descrição do serviço -->
                 As sessões de análise online seguem o mesmo rigor ético e
                 profissional das sessões presenciais. Trocamos o divã pela
                 câmera, mas a qualidade do atendimento e a escuta analítica
@@ -351,12 +349,13 @@
 
           <div
             class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
+            data-aos="zoom-in"
+            data-aos-delay="300"
           >
             <div class="service-box">
               <div class="icon"><i class="fas fa-users"></i></div>
               <h4>Supervisão Clínica</h4>
               <p>
-                <!-- Espaço para descrição do serviço -->
                 O que é supervisão clínica? A supervisão clínica é um dos
                 pilares do tripé psicanalítico, ao lado da teoria e da análise
                 pessoal. Como psicanalistas, não existimos de forma isolada — é
@@ -370,16 +369,15 @@
       </div>
     </section>
 
-    <!-- Seção Depoimentos (opcional) -->
     <section id="depoimentos" class="depoimentos section-bg">
       <div class="container">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
           <h2>Depoimentos</h2>
           <p>O que dizem sobre meu trabalho</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="testimonial-item">
               <p>
                 <i class="fas fa-quote-left quote-icon-left"></i>
@@ -393,7 +391,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="testimonial-item">
               <p>
                 <i class="fas fa-quote-left quote-icon-left"></i>
@@ -406,7 +404,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="testimonial-item">
               <p>
                 <i class="fas fa-quote-left quote-icon-left"></i>
@@ -424,9 +422,8 @@
       </div>
     </section>
 
-    <!-- Seção CTA (Call to Action) -->
     <section id="cta" class="cta">
-      <div class="container">
+      <div class="container" data-aos="zoom-in">
         <div class="text-center">
           <h3>Pronto para iniciar sua jornada de autoconhecimento?</h3>
           <p>
@@ -438,7 +435,6 @@
       </div>
     </section>
 
-    <!-- Rodapé -->
     <footer id="footer">
       <div class="footer-top">
         <div class="container">
@@ -447,7 +443,6 @@
               <div class="footer-info">
                 <h3>Tauana Pavanelli</h3>
                 <p>
-                  <!-- Espaço para endereço -->
                   <a
                     href="https://maps.app.goo.gl/UY132Qy6CDecaRJK9"
                     target="_blank"
@@ -459,20 +454,7 @@
                   <br />
                   <strong>Email:</strong> tauanapavanelli@gmail.com<br />
                 </p>
-                <!--  
-                <div class="social-links mt-3">
-                  <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                  <a href="#" class="facebook"
-                    ><i class="fab fa-facebook"></i
-                  ></a>
-                  <a href="#" class="instagram"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                  <a href="#" class="linkedin"
-                    ><i class="fab fa-linkedin"></i
-                  ></a>
-                </div>
-              --></div>
+              </div>
             </div>
 
             <div class="col-lg-4 col-md-6 footer-links">
@@ -500,7 +482,6 @@
             <div class="col-lg-4 col-md-6 footer-newsletter">
               <h4>Horário de Atendimento</h4>
               <p>
-                <!-- Espaço para horário de atendimento -->
                 Consulte a disponibilidade<br /><strong>Telefone:</strong>
                 <a href="https://wa.me/5516996300387" target="_blank"
                   >(16) 99630-0387</a
@@ -513,26 +494,24 @@
 
       <div class="container">
         <div class="copyright">
-          &copy; Copyright <strong><span>Tauana Pavanelli</span></strong
+          © Copyright <strong><span>Tauana Pavanelli</span></strong
           >. Todos os direitos reservados. <br />
           Desenvolvido por
-          <a href="https://wa.me/5527997763060"
+          <a href="https://tostesdev.com/" target="_blank" noopener noreferrer
             ><strong>Alessandro Tostes</strong></a
           >
         </div>
       </div>
     </footer>
 
-    <!-- Botão de voltar ao topo -->
     <a
       href="#"
       class="back-to-top d-flex align-items-center justify-content-center"
       ><i class="fas fa-arrow-up"></i
     ></a>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- JS personalizado -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

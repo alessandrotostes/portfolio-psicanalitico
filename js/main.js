@@ -1,6 +1,11 @@
 // JavaScript personalizado para o site de portfólio do psicanalista
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Inicializa a biblioteca de animação AOS
+  AOS.init({
+    duration: 800, // Duração da animação em milissegundos
+    once: true, // A animação acontece apenas uma vez
+  });
   // Ativar botão de voltar ao topo
   const backToTopButton = document.querySelector(".back-to-top");
 

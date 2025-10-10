@@ -90,7 +90,7 @@ a:hover {
 
 /* Navbar */
 .navbar {
-  padding: 15px 0;
+  padding: 10px 0;
   background-color: var(--color-white);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.5s;
@@ -104,19 +104,60 @@ a:hover {
 
 .navbar .nav-link {
   font-size: 16px;
-  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   color: var(--color-text) !important;
   padding: 10px 15px !important;
   margin: 0 5px;
+  position: relative; /* Essencial para o posicionamento do sublinhado */
+  transition: color 0.3s ease; /* Transição suave da cor do texto */
 }
 
-.navbar .nav-link:hover,
+.navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0); /* Começa com largura 0 */
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-primary); /* Cor do sublinhado */
+  transform-origin: center; /* A animação acontece do centro para as bordas */
+  transition: transform 0.3s ease-out; /* Velocidade e tipo da animação */
+}
+.navbar .nav-link:hover {
+  color: var(
+    --color-primary
+  ) !important; /* Mantém a mudança de cor ao passar o mouse */
+}
+.navbar .nav-link:hover::after {
+  transform: scaleX(1); /* Expande o sublinhado para 100% da largura */
+}
+
 .navbar .nav-link.active {
   color: var(--color-primary) !important;
+  font-weight: 600;
+}
+.navbar .nav-link.active::after {
+  transform: scaleX(1);
 }
 
 .navbar .nav-link.active {
   font-weight: 600;
+}
+
+.navbar.scrolled {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Cor de fundo branca com 20% de opacidade */
+  backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+  -webkit-backdrop-filter: blur(
+    10px
+  ); /* Para compatibilidade com o navegador Safari */
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
 }
 /* Estilo da logo */
 .logo {
@@ -153,18 +194,51 @@ a:hover {
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 10px 30px;
+  padding: 12px 35px;
   border-radius: 50px;
-  transition: 0.5s;
+  transition: all 0.4s ease; /* Transição mais completa */
   color: var(--color-white);
-  background: var(--color-primary);
+  /* EFEITO GRADIENTE */
+  background: linear-gradient(
+    45deg,
+    var(--color-primary-dark),
+    var(--color-primary-light)
+  );
+  border: none; /* Removemos a borda para um look mais clean */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra inicial */
   margin-top: 30px;
 }
 
+/* Adicione esta regra de hover logo abaixo da anterior */
 #hero .btn-get-started:hover {
-  background: var(--color-primary-light);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px); /* Efeito de elevação */
+  box-shadow: 0 8px 25px rgba(60, 94, 62, 0.3); /* Sombra mais forte para dar profundidade */
+}
+
+/* Substitua a regra original na seção CTA */
+.cta .cta-btn {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 35px;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  margin-top: 20px;
+  color: var(--color-primary);
+  background: var(--color-white); /* Fundo branco */
+  border: 2px solid var(--color-white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modifique a regra de hover da seção CTA */
+.cta .cta-btn:hover {
+  background: transparent; /* Fundo fica transparente */
+  color: var(--color-white); /* Texto fica branco */
+  transform: translateY(-3px); /* Efeito de elevação */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 #hero .hero-img {
@@ -230,7 +304,8 @@ a:hover {
   overflow: hidden;
   background: var(--color-white);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-  transition: all 0.3s ease-in-out;
+  /* Garanta que a transição inclua a sombra (box-shadow) */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border-radius: 10px;
   z-index: 1;
   text-align: center;
@@ -259,8 +334,13 @@ a:hover {
   font-size: 36px;
   line-height: 0;
   color: var(--color-primary);
+  /* Adicione esta linha para a animação do ícone */
+  transition: transform 0.3s ease;
 }
-
+.service-box:hover .icon i {
+  transform: scale(1.15); /* Aumenta o tamanho do ícone em 15% */
+  color: var(--color-primary-dark); /* Deixa a cor um pouco mais forte */
+}
 .service-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
