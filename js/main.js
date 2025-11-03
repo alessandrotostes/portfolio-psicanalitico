@@ -4,6 +4,27 @@ document.addEventListener("DOMContentLoaded", function () {
     duration: 800, // Duração da animação em milissegundos
     once: true, // A animação acontece apenas uma vez
   });
+  // --- INÍCIO DO CÓDIGO DO "TOAST" POP-UP (GRUPO LACAN) ---
+
+  // Seleciona o elemento do Toast no HTML pelo ID
+  const toastElement = document.getElementById("lacanToast");
+
+  if (toastElement) {
+    // 1. Cria a instância do Toast ANTES
+    // Isso garante que o botão [data-bs-dismiss="toast"] funcione 100%
+    const lacanToast = new bootstrap.Toast(toastElement, {
+      autohide: false, // Garante que ele não se esconda sozinho
+    });
+
+    // 2. Atraso de 2 segundos para exibir
+    setTimeout(() => {
+      // 3. Usa o método .show() oficial do Bootstrap
+      // Isso adiciona a classe .show e ativa nossa animação CSS
+      lacanToast.show();
+    }, 1000); // 2 segundos de atraso
+  }
+
+  // --- FIM DO CÓDIGO DO "TOAST" POP-UP (GRUPO LACAN) ---
   // Bloco Swiper
   const swiper = new Swiper(".swiper", {
     effect: "fade",
