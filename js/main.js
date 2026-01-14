@@ -161,4 +161,26 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+  // --- LÓGICA DO BALÃO WHATSAPP ---
+  const whatsappBubble = document.getElementById("whatsapp-bubble");
+  const whatsappIcon = whatsappBubble?.querySelector(".whatsapp-icon-main");
+  const closeBubble = whatsappBubble?.querySelector(".btn-close-bubble");
+
+  if (whatsappBubble && whatsappIcon) {
+    // Mostrar o balão automaticamente após 3 segundos
+    setTimeout(() => {
+      whatsappBubble.classList.add("active");
+    }, 3000);
+
+    // Toggle ao clicar no ícone
+    whatsappIcon.addEventListener("click", () => {
+      whatsappBubble.classList.toggle("active");
+    });
+
+    // Fechar ao clicar no X
+    closeBubble?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      whatsappBubble.classList.remove("active");
+    });
+  }
 }); // <-- FECHAMENTO DO DOMContentLoaded
