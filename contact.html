@@ -28,20 +28,13 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Raleway:wght@600;700&family=Playfair+Display:wght@700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Raleway:wght@600;700&family=Playfair+Display:wght@700&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Raleway:wght@600;700&family=Playfair+Display:wght@700&display=swap" media="print" onload="this.media='all'" />
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'" />
 
-    <link rel="stylesheet" href="css/style.css?v=1.0" />
+    <link rel="stylesheet" href="css/style.css?v=1.1" />
     <link rel="icon" href="img/tp-favico.ico" type="image/x-icon" />
   </head>
   <body class="contact-page">
@@ -59,7 +52,7 @@
             data-bs-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
-            aria-label="Toggle navigation"
+            aria-label="Menu de Navegação"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -82,18 +75,16 @@
         </div>
       </nav>
     </header>
+    <main>
 
     <section id="contact-header" class="d-flex align-items-center">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center" data-aos="zoom-in">
             <h1>Contato</h1>
-            <h4>
-              Este é um espaço seguro para você
-              <strong>expressar suas inquietações</strong>. Fale comigo e saiba
-              como trilhar esse caminho de compreensão de si mesmo. Você não
-              precisa seguir sozinho.
-            </h4>
+            <p class="lead">
+              Você não precisa seguir sozinho.
+            </p>
           </div>
         </div>
       </div>
@@ -106,7 +97,7 @@
             <div class="info">
               <div class="address">
                 <i class="fas fa-map-marker-alt"></i>
-                <h4>Localização:</h4>
+                <h3>Localização:</h3>
                 <p>
                   <a
                     href="https://maps.app.goo.gl/mWYpdGTqFuWeRUBLA"
@@ -121,13 +112,13 @@
 
               <div class="email">
                 <i class="fas fa-envelope"></i>
-                <h4>Email:</h4>
+                <h3>Email:</h3>
                 <p>tauanapavanelli@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="fas fa-phone"></i>
-                <h4>Telefone:</h4>
+                <h3>Telefone:</h3>
                 <p>
                   <a
                     href="https://wa.me/5516996300387"
@@ -140,7 +131,7 @@
 
               <div class="hours">
                 <i class="fas fa-clock"></i>
-                <h4>Horário de Atendimento:</h4>
+                <h3>Horário de Atendimento:</h3>
                 <p>
                   Consulte a disponibilidade via Whastapp no número acima ou
                   clicando
@@ -361,13 +352,17 @@
       </div>
     </div>
   -->
+    </main>
+
+    <!-- Social Media links with ARIA labels could go here if needed -->
+
     <footer id="footer">
       <div class="footer-top">
         <div class="container">
           <div class="row">
             <div class="col-lg-4 col-md-6">
               <div class="footer-info">
-                <h3>Tauana Pavanelli</h3>
+                <h2>Tauana Pavanelli</h2>
                 <p>
                   <a
                     href="https://maps.app.goo.gl/mWYpdGTqFuWeRUBLA"
@@ -382,7 +377,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 footer-links">
-              <h4>Links Úteis</h4>
+              <h3>Links Úteis</h3>
               <ul>
                 <li>
                   <i class="fas fa-chevron-right"></i>
@@ -404,7 +399,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 footer-newsletter">
-              <h4>Horário de Atendimento</h4>
+              <h3>Horário de Atendimento</h3>
               <p>
                 Consulte a disponibilidade<br /><strong>Telefone:</strong>
                 <a
@@ -437,10 +432,13 @@
     <a
       href="#"
       class="back-to-top d-flex align-items-center justify-content-center"
+      aria-label="Voltar ao topo"
       ><i class="fas fa-arrow-up"></i
     ></a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+
+    <!-- Scripts at the end for performance -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

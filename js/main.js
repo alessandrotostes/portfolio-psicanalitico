@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   AOS.init({
     duration: 800, // Duração da animação em milissegundos
     once: true, // A animação acontece apenas uma vez
+    disable: "mobile", // Desativa a animação em celulares para melhorar a performance
   });
   // --- INÍCIO DO CÓDIGO DO "TOAST" POP-UP (GRUPO LACAN) ---
 
