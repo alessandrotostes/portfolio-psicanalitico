@@ -1,10 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
+  /**
+   * Reading Progress Bar
+   */
+  const progressLine = document.querySelector("#scroll-progress");
+  if (progressLine) {
+    window.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      progressLine.style.width = scrolled + "%";
+    });
+  }
+
   // Inicializa a biblioteca de animação AOS
   AOS.init({
     duration: 800, // Duração da animação em milissegundos
     once: true, // A animação acontece apenas uma vez
     disable: "mobile", // Desativa a animação em celulares para melhorar a performance
   });
+
+  // Rastreamento de conversão no botão do Hero
+  const heroBtn = document.querySelector(".btn-get-started");
+  heroBtn?.addEventListener("click", () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "whatsapp_conversion",
+      location: "hero_section",
+    });
+  });
+
   // --- INÍCIO DO CÓDIGO DO "TOAST" POP-UP (GRUPO LACAN) ---
 
   // Seleciona o elemento do Toast no HTML pelo ID
@@ -26,8 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // --- FIM DO CÓDIGO DO "TOAST" POP-UP (GRUPO LACAN) ---
-  // Bloco Swiper
-  const swiper = new Swiper(".swiper", {
+  // Bloco Swiper para o Hero
+  const heroSwiper = new Swiper(".hero-img .swiper", {
     effect: "fade",
     fadeEffect: {
       crossFade: true,
@@ -38,12 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
       disableOnInteraction: false,
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".hero-img .swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".hero-img .swiper-button-next",
+      prevEl: ".hero-img .swiper-button-prev",
     },
   });
 
@@ -130,6 +157,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const targetId = this.getAttribute("href");
 
+      // Rastreamento de cliques em links de WhatsApp (se houver no menu ou âncoras)
+      if (targetId.includes("wa.me")) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "whatsapp_click",
+          location: "anchor_link",
+        });
+      }
+
       if (targetId === "#") return;
 
       const targetElement = document.querySelector(targetId);
@@ -176,6 +212,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle ao clicar no ícone
     whatsappIcon.addEventListener("click", () => {
       whatsappBubble.classList.toggle("active");
+      
+      // Rastreamento de abertura do balão
+      if (whatsappBubble.classList.contains("active")) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "whatsapp_bubble_open"
+        });
+      }
+    });
+
+    // Rastreamento de clique no botão dentro do balão
+    const whatsappBtn = whatsappBubble.querySelector(".whatsapp-btn");
+    whatsappBtn?.addEventListener("click", () => {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "whatsapp_conversion",
+        location: "floating_bubble"
+      });
     });
 
     // Fechar ao clicar no X
@@ -184,4 +238,34 @@ document.addEventListener("DOMContentLoaded", function () {
       whatsappBubble.classList.remove("active");
     });
   }
+
+  /**
+   * Testimonials slider
+   */
+  new Swiper(".testimonials-slider", {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 30,
+    grabCursor: true,
+    pagination: {
+      el: ".testimonials-slider .swiper-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
 }); // <-- FECHAMENTO DO DOMContentLoaded

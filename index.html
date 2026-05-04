@@ -4,22 +4,37 @@
     <link rel="preload" href="img/hero-img.jpg" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Raleway:wght@600;700&family=Playfair+Display:wght@700&display=swap" as="style" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Raleway:wght@600;700&family=Playfair+Display:wght@700&display=swap" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Raleway:wght@600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Psicanalista em Ribeirão Preto - Tauana Pavanelli</title>
+    <link rel="canonical" href="https://www.tauanapavanelli.com/" />
     <meta
       name="description"
       content="Psicanalista em Ribeirão Preto (SP). Tauana Pavanelli oferece atendimento presencial e online, com foco em autoconhecimento e bem-estar emocional. Agende sua consulta."
     />
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WF3KZWVB");
+    </script>
+    <!-- End Google Tag Manager -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        "@type": "PsychologicalService",
         "name": "Tauana Pavanelli Psicanalista",
-        "description": "Psicanalista em Ribeirão Preto (SP). Atendimento presencial e online focado em autoconhecimento e bem-estar emocional.",
+        "alternateName": "Tauana Pavanelli Psicanálise",
+        "description": "Psicanalista em Ribeirão Preto (SP) com orientação lacaniana. Atendimento focado em autoconhecimento, bem-estar emocional e clínica para adultos, adolescentes e PcD.",
         "telephone": "+55-16-99630-0387",
         "email": "tauanapavanelli@gmail.com",
         "address": {
@@ -30,11 +45,24 @@
           "streetAddress": "Nova Aliança"
         },
         "image": "https://www.tauanapavanelli.com/img/profile1.png",
-        "url": "https://www.tauanapavanelli.com/index.html",
+        "url": "https://www.tauanapavanelli.com/",
         "priceRange": "$$",
+        "hasMap": "https://maps.app.goo.gl/mWYpdGTqFuWeRUBLA",
+        "areaServed": {
+          "@type": "City",
+          "name": "Ribeirão Preto"
+        },
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
-          "description": "Consulte a disponibilidade via Whatsapp"
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
         }
       }
     </script>
@@ -65,6 +93,8 @@
     <link rel="icon" href="img/tp-favico.ico" type="image/x-icon" />
   </head>
   <body>
+    <!-- Reading Progress Bar -->
+    <div id="scroll-progress"></div>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
@@ -382,48 +412,51 @@
           <p>O que dizem sobre meu trabalho</p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimonial-item">
-              <p>
-                <i class="fas fa-quote-left quote-icon-left"></i>
-                Pra mim a terapia que fizemos juntas foi um divisor de águas na
-                minha vida, foi muito valioso, obrigada por ter me auxiliado na
-                minha maneira de ver e lidar com as coisas, não sei se minha
-                vida teria mudado se não fossem as sessões que nós fizemos.
-                <i class="fas fa-quote-right quote-icon-right"></i>
-              </p>
-              <h3>Bruna C.</h3>
-            </div>
-          </div>
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="fas fa-quote-left quote-icon-left"></i>
+                  Pra mim a terapia que fizemos juntas foi um divisor de águas na
+                  minha vida, foi muito valioso, obrigada por ter me auxiliado na
+                  minha maneira de ver e lidar com as coisas, não sei se minha
+                  vida teria mudado se não fossem as sessões que nós fizemos.
+                  <i class="fas fa-quote-right quote-icon-right"></i>
+                </p>
+                <h3>Bruna C.</h3>
+              </div>
+            </div><!-- End testimonial item -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="testimonial-item">
-              <p>
-                <i class="fas fa-quote-left quote-icon-left"></i>
-                Me sinto pronto para viver, você me ensinou recursos e me
-                mostrou ferramentas que eu não conhecia e que mudaram a minha
-                vida e o meu relacionamento completamente.
-                <i class="fas fa-quote-right quote-icon-right"></i>
-              </p>
-              <h3>Fernando S.</h3>
-            </div>
-          </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="fas fa-quote-left quote-icon-left"></i>
+                  Me sinto pronto para viver, você me ensinou recursos e me
+                  mostrou ferramentas que eu não conhecia e que mudaram a minha
+                  vida e o meu relacionamento completamente.
+                  <i class="fas fa-quote-right quote-icon-right"></i>
+                </p>
+                <h3>Fernando S.</h3>
+              </div>
+            </div><!-- End testimonial item -->
 
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="testimonial-item">
-              <p>
-                <i class="fas fa-quote-left quote-icon-left"></i>
-                Ter ansiedade e aquela sensação de que tudo é perigoso de que
-                tudo vai dar errado, parecia uma realidade difícil de mudar. Mas
-                você me ajudou a me escutar, a entender o que se passava nos
-                meus pensamentos e a poder direcioná-los melhor e não deixá-los
-                me dominar. Sou grata por isso!
-                <i class="fas fa-quote-right quote-icon-right"></i>
-              </p>
-              <h3>Clara R.</h3>
-            </div>
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="fas fa-quote-left quote-icon-left"></i>
+                  Ter ansiedade e aquela sensação de que tudo é perigoso de que
+                  tudo vai dar errado, parecia uma realidade difícil de mudar. Mas
+                  você me ajudou a me escutar, a entender o que se passava nos
+                  meus pensamentos e a poder direcioná-los melhor e não deixá-los
+                  me dominar. Sou grata por isso!
+                  <i class="fas fa-quote-right quote-icon-right"></i>
+                </p>
+                <h3>Clara R.</h3>
+              </div>
+            </div><!-- End testimonial item -->
           </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -556,6 +589,10 @@
                   <i class="fas fa-chevron-right"></i>
                   <a href="contact.html">Contato</a>
                 </li>
+                <li>
+                  <i class="fas fa-chevron-right"></i>
+                  <a href="privacy.html">Privacidade</a>
+                </li>
               </ul>
             </div>
 
@@ -602,21 +639,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="js/main.js" defer></script>
 
-    <!-- Google Tag Manager (delayed) -->
-    <script>
-      window.addEventListener('load', function() {
-        (function (w, d, s, l, i) {
-          w[l] = w[l] || [];
-          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-          var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != "dataLayer" ? "&l=" + l : "";
-          j.async = true;
-          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-          f.parentNode.insertBefore(j, f);
-        })(window, document, "script", "dataLayer", "GTM-WF3KZWVB");
-      });
-    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBBDBWS5TJ"></script>
     <script>
