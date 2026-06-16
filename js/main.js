@@ -206,6 +206,20 @@ document.addEventListener("DOMContentLoaded", function () {
         slider.style.left = activeBtn.offsetLeft + "px";
       }
 
+      // Check URL parameters and hash first for shared links
+      const urlParams = new URLSearchParams(window.location.search);
+      let initialLoc = urlParams.get("location") || urlParams.get("loc") || window.location.hash.replace("#", "").toLowerCase();
+
+      // Normalize parameters
+      if (initialLoc === "ribeiraopreto" || initialLoc === "ribeirao-preto") {
+        initialLoc = "ribeirao";
+      }
+
+      // If initialLoc is valid, save to localStorage to persist preference
+      if (initialLoc === "ribeirao" || initialLoc === "jaboticabal") {
+        localStorage.setItem("selected_location", initialLoc);
+      }
+
       // Initialize switcher based on saved localStorage preference
       const savedLoc = localStorage.getItem("selected_location") || "ribeirao";
       const defaultActiveBtn = switcher.querySelector(".btn-location.active");
