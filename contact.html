@@ -12,11 +12,11 @@
       content="Psicanálise, Terapia, Autoconhecimento, Atendimento Online, Atendimento Presencial, Psicoterapia."
     />
     <meta name="author" content="Tauana Pavanelli" />
-    <title>Contato - Tauana Pavanelli Psicanalista em Ribeirão Preto</title>
+    <title>Contato - Tauana Pavanelli Psicanalista em Ribeirão Preto e Jaboticabal</title>
     <link rel="canonical" href="https://www.tauanapavanelli.com/contact.html" />
     <meta
       name="description"
-      content="Entre em contato com a psicanalista Tauana Pavanelli em Ribeirão Preto. Agende sua consulta presencial ou online e inicie sua jornada de autoconhecimento."
+      content="Entre em contato com a psicanalista Tauana Pavanelli em Ribeirão Preto e Jaboticabal. Agende sua consulta presencial ou online e inicie sua jornada de autoconhecimento."
     />
     <!-- Google Tag Manager -->
     <script>
@@ -50,7 +50,7 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css?v=1.1" />
+    <link rel="stylesheet" href="css/style.css?v=1.3" />
     <link rel="icon" href="img/tp-favico.ico" type="image/x-icon" />
   </head>
   <body class="contact-page">
@@ -108,12 +108,25 @@
 
     <section id="contact" class="contact section-bg">
       <div class="container" data-aos="fade-up">
+        <!-- Location Switcher -->
+        <div class="location-switcher-wrapper mb-3 mb-md-5" data-aos="fade-down">
+          <div class="location-switcher">
+            <button class="btn-location active" data-location="ribeirao" aria-label="Ver contatos de Ribeirão Preto">
+              <i class="fas fa-map-marker-alt me-2"></i>Ribeirão Preto
+            </button>
+            <button class="btn-location" data-location="jaboticabal" aria-label="Ver contatos de Jaboticabal">
+              <i class="fas fa-map-marker-alt me-2"></i>Jaboticabal
+            </button>
+            <span class="switcher-slider"></span>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-lg-5">
-            <div class="info">
-              <div class="address">
+            <div class="info" style="height: 100%;">
+              <div class="address" id="contact-address-ribeirao">
                 <i class="fas fa-map-marker-alt"></i>
-                <h3>Localização:</h3>
+                <h4>Localização (Ribeirão Preto):</h4>
                 <p>
                   <a
                     href="https://maps.app.goo.gl/mWYpdGTqFuWeRUBLA"
@@ -126,15 +139,30 @@
                 </p>
               </div>
 
+              <div class="address d-none-custom" id="contact-address-jaboticabal">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Localização (Jaboticabal):</h4>
+                <p>
+                  <a
+                    href="https://maps.app.goo.gl/gNLDznEoxUDarYmL7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Nova Jaboticabal<br />
+                    Jaboticabal - SP<br />
+                  </a>
+                </p>
+              </div>
+
               <div class="email">
                 <i class="fas fa-envelope"></i>
-                <h3>Email:</h3>
+                <h4>Email:</h4>
                 <p>tauanapavanelli@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="fas fa-phone"></i>
-                <h3>Telefone:</h3>
+                <h4>Telefone:</h4>
                 <p>
                   <a
                     href="https://wa.me/5516996300387"
@@ -147,34 +175,103 @@
 
               <div class="hours">
                 <i class="fas fa-clock"></i>
-                <h3>Horário de Atendimento:</h3>
-                <p>
-                  Consulte a disponibilidade via Whastapp no número acima ou
+                <h4>Horário de Atendimento:</h4>
+                <p id="hours-text">
+                  Consulte a disponibilidade via WhatsApp no número acima ou
                   clicando
-                  <strong
-                    ><a href="https://wa.me/5516996300387">AQUI!</a>
+                  <strong><a href="https://wa.me/5516996300387?text=Olá,%20visitei%20o%20seu%20site,%20gostaria%20de%20agendar%20uma%20primeira%20sessão%20em%20Ribeirão%20Preto!">AQUI!</a>
                   </strong>
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0">
-            <form action="#" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="maps">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7438.788741520694!2d-47.829457454615806!3d-21.2162046202442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9b94a6ef689bb%3A0xee8ae139a02514ce!2sNova%20Alian%C3%A7a%2C%20Ribeir%C3%A3o%20Preto%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1761871335523!5m2!1spt-BR!2sbr"
-                    width="600"
-                    height="450"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
+          <div class="col-lg-7 mt-5 mt-lg-0" data-aos="fade-left">
+            <div class="contact-welcome-card" style="padding: 40px; background: var(--color-white); border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05); border-top: 4px solid var(--color-primary); height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span class="font-monospace text-uppercase" style="font-size: 13px; letter-spacing: 1.5px; color: var(--color-secondary); font-weight: 700;">Agendamento de Consultas</span>
+                <h2 style="font-family: var(--font-heading); color: var(--color-primary-dark); font-size: 32px; margin-top: 10px; margin-bottom: 20px; font-weight: 700;">Inicie o seu Percurso Analítico</h2>
+                
+                <p id="welcome-text-ribeirao" style="color: var(--color-text-light); line-height: 1.8; font-size: 16px; margin-bottom: 25px;">
+                  O processo analítico é uma oportunidade de construir um lugar seguro para sua palavra e escuta de si mesmo. 
+                  As consultas presenciais são realizadas no bairro <strong>Nova Aliança</strong>, em Ribeirão Preto (SP), em consultório confortável e acolhedor, planejado para garantir sigilo profissional absoluto e tranquilidade.
+                </p>
+
+                <p id="welcome-text-jaboticabal" class="d-none-custom" style="color: var(--color-text-light); line-height: 1.8; font-size: 16px; margin-bottom: 25px;">
+                  O processo analítico é uma oportunidade de construir um lugar seguro para sua palavra e escuta de si mesmo. 
+                  As consultas presenciais são realizadas no bairro <strong>Nova Jaboticabal</strong>, em Jaboticabal (SP), em consultório confortável e acolhedor, planejado para garantir sigilo profissional absoluto e tranquilidade.
+                </p>
+
+                <p style="color: var(--color-text-light); line-height: 1.8; font-size: 16px; margin-bottom: 30px;">
+                  Para maior comodidade e alcance, também realizamos <strong>atendimentos online</strong> (via videoconferência criptografada) para pacientes de todo o Brasil e brasileiros residentes no exterior.
+                </p>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                      <span class="rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: rgba(135, 106, 79, 0.1); color: var(--color-secondary); margin-right: 12px;"><i class="fas fa-check" style="font-size: 14px;"></i></span>
+                      <span style="color: var(--color-primary-dark); font-weight: 600; font-size: 15px;">Adultos e Adolescentes</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                      <span class="rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: rgba(135, 106, 79, 0.1); color: var(--color-secondary); margin-right: 12px;"><i class="fas fa-check" style="font-size: 14px;"></i></span>
+                      <span style="color: var(--color-primary-dark); font-weight: 600; font-size: 15px;">Clínica e Pedagogia PcD</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                      <span class="rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: rgba(135, 106, 79, 0.1); color: var(--color-secondary); margin-right: 12px;"><i class="fas fa-check" style="font-size: 14px;"></i></span>
+                      <span style="color: var(--color-primary-dark); font-weight: 600; font-size: 15px;">Supervisão Clínica</span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                      <span class="rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: rgba(135, 106, 79, 0.1); color: var(--color-secondary); margin-right: 12px;"><i class="fas fa-check" style="font-size: 14px;"></i></span>
+                      <span style="color: var(--color-primary-dark); font-weight: 600; font-size: 15px;">Sigilo Profissional Rigoroso</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </form>
+
+              <div class="text-center mt-3">
+                <a id="contact-whatsapp-btn" href="https://wa.me/5516996300387?text=Olá,%20visitei%20o%20seu%20site,%20gostaria%20de%20agendar%20uma%20primeira%20sessão%20em%20Ribeirão%20Preto!" target="_blank" rel="noopener noreferrer" class="btn btn-get-started d-inline-flex align-items-center justify-content-center" style="border: none; padding: 15px 40px; border-radius: 50px; background: linear-gradient(45deg, #25D366, #128C7E); color: var(--color-white); box-shadow: 0 5px 20px rgba(37, 211, 102, 0.25); font-weight: 700; font-size: 16px; text-decoration: none; transition: all 0.4s ease; width: 100%; max-width: 400px; gap: 10px;">
+                  <i class="fab fa-whatsapp" style="font-size: 22px;"></i>
+                  Agendar por WhatsApp
+                </a>
+                <p class="font-monospace mt-2 mb-0" style="font-size: 11px; letter-spacing: 0.5px; color: var(--color-text-light); opacity: 0.8;">Você falará diretamente com a profissional para alinhar horários.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção do Mapa Geolocalizado em Largura Total -->
+        <div class="row mt-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-12">
+            <div class="maps shadow-sm rounded-4 overflow-hidden">
+              <div id="map-ribeirao" class="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7438.788741520694!2d-47.829457454615806!3d-21.2162046202442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b9b94a6ef689bb%3A0xee8ae139a02514ce!2sNova%20Alian%C3%A7a%2C%20Ribeir%C3%A3o%20Preto%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1761871335523!5m2!1spt-BR!2sbr"
+                  width="100%"
+                  height="450"
+                  style="border: 0; min-height: 400px; display: block;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <div id="map-jaboticabal" class="map-container d-none-custom">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14834.792576912345!2d-48.3344!3d-21.2558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b971a80d40134f%3A0x6d9f3d944c6888c3!2sJaboticabal%2C+SP!5e0!3m2!1spt-BR!2sbr!4v1717171717171!5m2!1spt-BR!2sbr"
+                  width="100%"
+                  height="450"
+                  style="border: 0; min-height: 400px; display: block;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -183,15 +280,13 @@
     <section id="social-media" class="social-media">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
-          <div class="section-title">
-            <blockquote class="styled-quote">
-              <p>
-                "Emoções não expressadas jamais morrem.<br />
-                Elas são enterradas vivas e voltarão mais tarde, mais feias"
-              </p>
-              <cite>— Sigmund Freud</cite>
-            </blockquote>
-          </div>
+          <blockquote class="styled-quote">
+            <p>
+              "Emoções não expressadas jamais morrem.<br />
+              Elas são enterradas vivas e voltarão mais tarde, mais feias"
+            </p>
+            <cite>— Sigmund Freud</cite>
+          </blockquote>
         </div>
       </div>
     </section>
@@ -459,6 +554,6 @@
     <!-- Scripts at the end for performance -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js?v=1.3" defer></script>
   </body>
 </html>

@@ -341,11 +341,19 @@ a:hover {
 .hero-img .swiper-slide {
   aspect-ratio: 1 / 1; /* Força o slide a ser um quadrado (proporção 1:1) */
   width: 100%; /* Garante que ele ocupe o espaço do container */
+  overflow: hidden; /* Corta imagens sobressalentes durante o zoom do Ken Burns */
+  border-radius: 10px;
 }
 .hero-img .swiper-slide img {
   width: 100%;
   height: 100%; /* Preenche o slide-pai */
   object-fit: cover; /* Regra padrão: CORTAR */
+  transform: scale(1);
+  transition: transform 6s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transição suave e lenta do zoom */
+}
+/* Transição ativa ao carregar o slide no Swiper (Efeito Ken Burns) */
+.hero-img .swiper-slide-active img {
+  transform: scale(1.08);
 }
 
 /* Estilizando as bolinhas de paginação para combinar com sua paleta */
@@ -447,8 +455,11 @@ a:hover {
   overflow: hidden;
   background: var(--color-white);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.03);
-  /* Garanta que a transição inclua a sombra (box-shadow) */
+  border-top: 4px solid var(--color-secondary); /* Borda superior em bronze sólido */
+  border-left: 1px solid rgba(135, 106, 79, 0.1);
+  border-right: 1px solid rgba(135, 106, 79, 0.1);
+  border-bottom: 1px solid rgba(135, 106, 79, 0.1);
+  /* Transição completa para um hover fluido */
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   border-radius: 20px;
   z-index: 1;
@@ -457,8 +468,9 @@ a:hover {
 }
 
 .service-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(39, 51, 33, 0.08); /* Sombra elegante esverdeada */
+  border-top-color: var(--color-accent); /* Sutil variação do bronze no hover */
 }
 
 .service-box .icon {
@@ -472,6 +484,11 @@ a:hover {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.service-box:hover .icon {
+  background-color: rgba(135, 106, 79, 0.08); /* Fundo do ícone bronzeia no hover */
 }
 
 .service-box .icon i {
@@ -479,13 +496,13 @@ a:hover {
   line-height: 0;
   color: var(--color-primary);
   /* Adicione esta linha para a animação do ícone */
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 .service-box:hover .icon i {
   transform: scale(1.15); /* Aumenta o tamanho do ícone em 15% */
-  color: var(--color-primary-dark); /* Deixa a cor um pouco mais forte */
+  color: var(--color-secondary); /* Ícone assume o tom de destaque */
 }
-.service-box h4 {
+.service-box h3 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 22px;
@@ -993,12 +1010,12 @@ a:hover {
 @media (max-width: 1199px) {
   #hero {
     height: auto;
-    padding: 120px 0 60px 0;
+    padding: 100px 0 60px 0;
   }
 
   #hero .hero-img {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   #hero .hero-img img {
@@ -1061,7 +1078,7 @@ a:hover {
   }
 }
 
-/* Estilos para o texto expansível */
+/* Estilos para o texto expansível com CSS Grid para transição suave */
 .expandable-text {
   position: relative;
   margin-bottom: 20px;
@@ -1080,6 +1097,7 @@ a:hover {
   cursor: pointer;
   font-size: 14px;
   transition: all 0.3s ease;
+  margin-top: 15px;
 }
 
 .btn-expand-text:hover {
@@ -1087,11 +1105,63 @@ a:hover {
   transform: translateY(-2px);
 }
 
+.expandable-text-container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+}
+
+.expandable-text-container.expanded {
+  grid-template-rows: 1fr;
+}
+
+.expandable-text-content {
+  min-height: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.expandable-text-container.expanded .expandable-text-content {
+  opacity: 1;
+}
+
 .text-expanded {
-  margin-top: 15px;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
-  animation: fadeIn 0.5s ease;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* Borda transparente suave para o fundo escuro */
+}
+
+/* Mensagens de Feedback do Formulário */
+.form-response-message {
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-top: 20px;
+  display: none;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.form-response-message.loading {
+  display: block;
+  background-color: rgba(135, 106, 79, 0.1);
+  color: var(--color-secondary);
+  border: 1px solid rgba(135, 106, 79, 0.2);
+}
+
+.form-response-message.success {
+  display: block;
+  background-color: rgba(39, 51, 33, 0.1);
+  color: var(--color-primary-light);
+  border: 1px solid rgba(39, 51, 33, 0.2);
+  font-weight: 600;
+}
+
+.form-response-message.error {
+  display: block;
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.2);
 }
 
 @keyframes fadeIn {
@@ -1124,14 +1194,14 @@ a:hover {
 
 /* 2. O ícone de aspas gigante no fundo */
 .styled-quote::before {
-  content: "∞"; /* Código unicode para aspas abertas “ */
-  font-family: "Georgia", serif; /* Uma fonte com aspas bonitas */
+  content: "\201C"; /* Código unicode para aspas abertas “ elegante */
+  font-family: var(--font-heading); /* Usa a fonte Playfair Display das headings */
   position: absolute;
-  top: 10px;
+  top: -15px;
   left: 15px;
-  font-size: 5em; /* Tamanho gigante */
+  font-size: 8em; /* Aspa gigante refinada */
   color: var(--color-accent);
-  opacity: 0.15;
+  opacity: 0.08; /* Mais sutil e transparente */
   z-index: 1; /* Coloca as aspas atrás do texto */
 }
 
@@ -1407,8 +1477,12 @@ a:hover {
 
   #hero {
     height: auto;
-    padding: 120px 0 60px 0;
+    padding: 90px 0 40px 0;
     text-align: center;
+  }
+
+  #hero .hero-img {
+    margin-top: 15px;
   }
 
   #hero h1 {
@@ -1509,4 +1583,106 @@ a:hover {
   right: -5px;
   position: relative;
   top: 10px;
+}
+
+/* ==========================================
+   Location Switcher & Transitions
+   ========================================== */
+.location-switcher-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.location-switcher {
+  display: inline-flex;
+  background: rgba(251, 249, 245, 0.6);
+  border: 1px solid rgba(135, 106, 79, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: 50px;
+  position: relative;
+  box-shadow: 0 5px 25px rgba(39, 51, 33, 0.05);
+}
+
+.btn-location {
+  border: none;
+  background: transparent;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-family: var(--font-nav);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-primary-light);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-location i {
+  transition: transform 0.3s ease;
+}
+
+.btn-location:hover i {
+  transform: translateY(-2px);
+}
+
+.btn-location.active {
+  color: var(--color-white) !important;
+}
+
+.switcher-slider {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: calc(100% - 12px);
+  background: linear-gradient(45deg, var(--color-primary-dark), var(--color-primary-light));
+  border-radius: 50px;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 15px rgba(39, 51, 33, 0.2);
+}
+
+/* Custom Display and Transition Utility Classes */
+.d-none-custom {
+  display: none !important;
+}
+
+.location-row {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.animate-fade {
+  animation: fadeTransition 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeTransition {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Map adjustment for smooth transition */
+.map-container {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.map-container.d-none-custom {
+  display: none !important;
+  opacity: 0;
 }
