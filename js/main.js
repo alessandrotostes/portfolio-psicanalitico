@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Handle contact.html elements
+    // Handle contato.html elements
     const addrRibeirao = document.getElementById("contact-address-ribeirao");
     const addrJaboticabal = document.getElementById("contact-address-jaboticabal");
     const welcomeRibeirao = document.getElementById("welcome-text-ribeirao");

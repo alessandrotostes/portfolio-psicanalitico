@@ -1,11 +1,19 @@
 RewriteEngine On
 
-# Remove .html de arquivos
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)$ $1.html [L,QSA]
+# Redireciona pagina antiga contact/contact.html para /contato (SEO)
+RewriteRule ^contact(\.html)?$ /contato [R=301,L]
+
+# Redireciona requisições externas de .html para sem extensão (SEO)
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteCond %{REQUEST_URI} !/index\.html$ [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
 
 # Redireciona /index.html para /
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)/index\.html [NC]
 RewriteRule ^(.*)/index\.html$ /$1 [R=301,L]
+
+# Servir arquivos html sem extensão internamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
